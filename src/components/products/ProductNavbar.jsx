@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function StockNavbar(){
+function ProductNavbar(){
     return(
         <nav className="mb-12">
             <ul className="flex flex-row gap-2 text-center font-bold text-sm">
@@ -30,4 +30,4 @@ function StockNavbar(){
     )
 }
 
-export default StockNavbar
+export default ProductNavbar

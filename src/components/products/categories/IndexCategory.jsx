@@ -1,11 +1,10 @@
 import Navbar from "../../Navbar";
 import Footer from "../../Footer";
-import OrderSidebar from "../OrderSidebar";
-import RentalNavbar from "./RentalNavbar";
-import Rental from "./Rental";
+import ProductSidebar from "../ProductSidebar";
+import Category from "./Category";
 import { Link } from "react-router-dom";
 
-function IndexRental() {
+function IndexCategory() {
     return (
         <div>
             <div className='my-8 mx-12'>
@@ -15,11 +14,11 @@ function IndexRental() {
                         <div className="container">
                             <ul className="breadcrumb">
                                 <li>
-                                    <Link to="/order">Orders</Link>
+                                    <Link to="/product">Product</Link>
                                 </li>
                                 <li>
-                                    <Link to="/order/rental" aria-label="current-page">
-                                        All Rentals
+                                    <Link to="/product/categories" aria-label="current-page">
+                                        Categories
                                     </Link>
                                 </li>
                             </ul>
@@ -27,10 +26,9 @@ function IndexRental() {
                     </section>
                 </div>
                 <section className="flex py-4 my-8">
-                    <OrderSidebar />
+                    <ProductSidebar />
                     <section>
-                        <RentalNavbar />
-                        <Rental />
+                        <Category />
                     </section>
                 </section>
             </div>
@@ -41,4 +39,4 @@ function IndexRental() {
     )
 }
 
-export default IndexRental;
+export default IndexCategory;

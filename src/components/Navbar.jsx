@@ -14,10 +14,10 @@ function Navbar() {
           </Link>
           <ul className="flex m-3 ml-12 text-xs font-semibold gap-8">
             <li>
-              <Link to="/user">USERS</Link>
+              <Link to="/users">USERS</Link>
             </li>
             <li>
-              <Link to="/stock">STOCKS</Link>
+              <Link to="/product">PRODUCT</Link>
             </li>
             <li>
               <Link to="/order">ORDERS</Link>

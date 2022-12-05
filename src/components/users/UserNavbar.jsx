@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function StockNavbar(){
+function UserNavbar(){
     return(
         <nav className="mb-8">
             <ul className="flex flex-row gap-2 text-center font-bold text-sm">
@@ -27,4 +27,4 @@ function StockNavbar(){
     )
 }
 
-export default StockNavbar
+export default UserNavbar

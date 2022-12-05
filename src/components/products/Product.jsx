@@ -1,11 +1,21 @@
-import Navbar from "../../Navbar";
-import Footer from "../../Footer";
-import OrderSidebar from "../OrderSidebar";
-import RentalNavbar from "./RentalNavbar";
-import Rental from "./Rental";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+import ProductSidebar from "./ProductSidebar";
+import ProductNavbar from "./ProductNavbar";
 import { Link } from "react-router-dom";
 
-function IndexRental() {
+const items = [
+    {
+        id: "223SDJ34",
+        name: "Speaker Kecil",
+        type: "Sound System",
+        kuantitas: 1,
+        date: "13/12/2022",
+        status: "UPCOMING",
+    }
+]
+
+function Product() {
     return (
         <div>
             <div className='my-8 mx-12'>
@@ -15,11 +25,8 @@ function IndexRental() {
                         <div className="container">
                             <ul className="breadcrumb">
                                 <li>
-                                    <Link to="/order">Orders</Link>
-                                </li>
-                                <li>
-                                    <Link to="/order/rental" aria-label="current-page">
-                                        All Rentals
+                                    <Link to="/product" aria-label="current-page">
+                                        Product
                                     </Link>
                                 </li>
                             </ul>
@@ -27,11 +34,7 @@ function IndexRental() {
                     </section>
                 </div>
                 <section className="flex py-4 my-8">
-                    <OrderSidebar />
-                    <section>
-                        <RentalNavbar />
-                        <Rental />
-                    </section>
+                    <ProductSidebar />
                 </section>
             </div>
             <footer>
@@ -41,4 +44,4 @@ function IndexRental() {
     )
 }
 
-export default IndexRental;
+export default Product;

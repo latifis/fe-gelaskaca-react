@@ -1,10 +1,10 @@
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-import UserSidebar from "./UserSidebar";
-import UserNavbar from "./UserNavbar";
+import Navbar from "../../Navbar";
+import Footer from "../../Footer";
+import UserSidebar from "../UserSidebar";
+import UserNavbar from "../UserNavbar";
 import { Link } from "react-router-dom";
 
-function User() {
+function IndexLAdd() {
     return (
         <div>
             <div className='my-8 mx-12'>
@@ -14,8 +14,11 @@ function User() {
                         <div className="container">
                             <ul className="breadcrumb">
                                 <li>
-                                    <Link to="/users" aria-label="current-page">
-                                        Users
+                                    <Link to="/users">Users</Link>
+                                </li>
+                                <li>
+                                    <Link to="/users/add-user" aria-label="current-page">
+                                        Add User
                                     </Link>
                                 </li>
                             </ul>
@@ -71,4 +74,4 @@ const items = [
     }
 ]
 
-export default User;
+export default IndexLAdd;

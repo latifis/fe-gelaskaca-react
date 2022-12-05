@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
-import Category from "./Category";
 import ProductDetail from "./ProductDetail";
 import Cart from "./Cart";
 import Confirm from "./Confirm";
@@ -18,9 +17,16 @@ import Order from "./components/orders/Order";
 import Rental from "./components/orders/rentals/IndexRental";
 import Returned from "./components/orders/returneds/IndexReturned";
 
+import Product from "./components/products/Product";
+import Category from "./components/products/categories/IndexCategory";
+import Stock from "./components/products/stocks/IndexStock";
+import AddProduct from "./components/products/add/IndexAdd";
+
 import Navbar from "./components/Navbar";
-import Stock from "./components/stocks/Stock";
+
 import User from "./components/users/User";
+import List from "./components/users/lists/IndexList"
+import AddUser from "./components/users/add/IndexAdd"
 
 function App() {
   return (
@@ -28,10 +34,9 @@ function App() {
       <StrictMode>
         <BrowserRouter>
           <Routes>
-            <Route path="/category" element={<Category />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/product" element={<ProductDetail />} />
+            {/* <Route path="/product" element={<ProductDetail />} /> */}
             <Route path="/cart" element={<Cart />} />
             <Route path="/confirm" element={<Confirm />} />
             <Route path="/success" element={<Success />} />
@@ -44,9 +49,15 @@ function App() {
             <Route path="/order/rental" element={<Rental />} />
             <Route path="/order/returned" element={<Returned />} />
             
-            <Route path="/stock" element={<Stock />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/product/categories" element={<Category />} />
+            <Route path="/product/stocks" element={<Stock />} />
+            <Route path="/product/add-product" element={<AddProduct />} />
 
-            <Route path="/user" element={<User />} />
+            <Route path="/users" element={<User />} />
+            <Route path="/users/list" element={<List />} />
+            <Route path="/users/add-user" element={<AddUser />} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/navbar" element={<Navbar />} />
             
