@@ -45,16 +45,16 @@ function App() {
             <Route path="/profile" element={<Profile />} />
 
             {/* NEW */}
-            <Route path="/order" element={<Order />} />
+            <Route path="/order" element={<Rental />} /> {/* route Order diganti Rental */}
             <Route path="/order/rental" element={<Rental />} />
             <Route path="/order/returned" element={<Returned />} />
             
-            <Route path="/product" element={<Product />} />
+            <Route path="/product" element={<Category />} /> {/* route Product diganti Category */}
             <Route path="/product/categories" element={<Category />} />
             <Route path="/product/stocks" element={<Stock />} />
             <Route path="/product/add-product" element={<AddProduct />} />
 
-            <Route path="/users" element={<User />} />
+            <Route path="/users" element={<List />} /> {/* route User diganti List */}
             <Route path="/users/list" element={<List />} />
             <Route path="/users/add-user" element={<AddUser />} />
 
