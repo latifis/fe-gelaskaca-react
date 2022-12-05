@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function StockNavbar(){
     return(
-        <nav className="mb-12">
+        <nav className="mb-8">
             <ul className="flex flex-row gap-2 text-center font-bold text-sm">
                 <li id="name" className="flex-none w-28">
                     Name
