@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;800&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.Register-input {
+  background-color: #d9d9d9;
+  margin-top: 8px;
+  padding: 0 12px;
+  height: 35px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.Register-btn {
+  background-color: #4839f4;
+  margin: 36px 0 8px 0;
+  color: white;
+  height: 35px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.forget-input {
+  color: #727272;
+}
+
+.forget-input:hover {
+  color: black;
+}
+
+.btn-cancel {
+  background-color: #dc2626;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.SignUp-main {
+  background-color: #f5f5f5;
+}
+
+.SignUp-detail-p {
+  color: #727272;
+}
+
+.btn {
+  height: 32px;
+}
+
+.btn-up {
+  border: 1px solid #4839f4;
+  color: #4839f4;
+}
+
+.btn-in {
+  background-color: #4839f4;
+  color: white;
+}
+
+.card {
+  background-color: #f5f5f5;
+}
+
+.footer-info div div h2 {
+  color: #4839f4;
+}
+
+.stretched-link {
+  @apply absolute inset-0 z-10;
+}
+
+/* breadcrumb */
+
+ul.breadcrumb {
+  @apply flex flex-row items-center text-lg;
+}
+
+ul.breadcrumb li:not(:last-child):after {
+  content: "/";
+  @apply px-4;
+}
+
+ul.breadcrumb li:not(:last-child) a {
+  @apply font-light;
+}
+
+ul.breadcrumb li:last-child a {
+  @apply font-semibold;
+}
+
+.read-more {
+  color: #4839f4;
+}
+
+.payment-proof {
+  background-color: #dddddd;
+  color: #727272;
+}
