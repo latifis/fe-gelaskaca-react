@@ -64,7 +64,7 @@ function Category() {
 						<li id="action" className="flex-none px-5 w-100">
 							<div className="flex gap-3">
 								<Link
-									onClick={"/"}
+									onClick={`/product/categories/${index}`}
 									type="button"
 									class="inline-block px-5 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out"
 								>
