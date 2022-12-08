@@ -3,6 +3,7 @@ import Footer from "../../Footer";
 import ProductSidebar from "../ProductSidebar";
 import Category from "./Category";
 import { Link } from "react-router-dom";
+import CategoryNavbar from "./CategoryNavbar";
 
 function IndexCategory() {
     return (
@@ -28,6 +29,7 @@ function IndexCategory() {
                 <section className="flex py-4 my-8">
                     <ProductSidebar />
                     <section>
+                        <CategoryNavbar />
                         <Category />
                     </section>
                 </section>
