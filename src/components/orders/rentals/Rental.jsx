@@ -1,31 +1,49 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function Rental() {
+    const [rent, setRent] = useState([])
+
+    const fetchId = async () => {
+        try {
+            await axios
+                .get("htpp://localhost:8080/api/rents")
+                .then((response) => {
+                    setRent(() => response.data);
+                })
+        } catch {
+            //console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchId()
+    }, [])
+
     return (
         <div>
-            {items.map((item) => {
-                return (
-                    <div>
-                        <ul className="flex flex-row py-5 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
-                            <li id="rent_start" className="felx-none w-40">
-                                {item.rent_start}
-                            </li>
-                            <li id="name" className="flex-none w-32">
-                                {item.name}
-                            </li>
-                            <li id="address" className="flex-none w-72">
-                                {item.address}
-                            </li>
-                            <li id="rent_end" className="flex-none w-40">
-                                {item.rent_end}
-                            </li>
-                            <li id="state" className="flex-none w-36">
-                                {item.state}
-                            </li>
-                        </ul>
-                    </div>
-                )
-            })}
+            {items.map((item) => (
+                <div>
+                    <ul className="flex flex-row py-5 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
+                        <li id="rent_start" className="felx-none w-40">
+                            {item.rent_start}
+                        </li>
+                        <li id="name" className="flex-none w-32">
+                            {item.name}
+                        </li>
+                        <li id="address" className="flex-none w-72">
+                            {item.address}
+                        </li>
+                        <li id="rent_end" className="flex-none w-40">
+                            {item.rent_end}
+                        </li>
+                        <li id="state" className="flex-none w-36">
+                            {item.state}
+                        </li>
+                    </ul>
+                </div>
+            ))}
         </div>
     )
 }

@@ -25,8 +25,15 @@ import AddProduct from "./components/products/add/IndexAdd";
 import Navbar from "./components/Navbar";
 
 import User from "./components/users/User";
-import List from "./components/users/lists/IndexList"
+import ListUser from "./components/users/lists/IndexList"
 import AddUser from "./components/users/add/IndexAdd"
+
+import Voucher from "./components/vouchers/Voucher";
+import ListVoucher from "./components/vouchers/lists/IndexListVoucher"
+import AddVoucher from "./components/vouchers/add/IndexAddVoucher"
+
+import Payment from "./components/payments/Payment";
+import ListPayment from "./components/payments/lists/IndexListPayment"
 
 function App() {
   return (
@@ -54,13 +61,20 @@ function App() {
             <Route path="/product/stocks" element={<Stock />} />
             <Route path="/product/add-product" element={<AddProduct />} />
 
-            <Route path="/users" element={<List />} /> {/* route User diganti List */}
-            <Route path="/users/list" element={<List />} />
+            <Route path="/users" element={<ListUser />} /> {/* route User diganti List */}
+            <Route path="/users/list" element={<ListUser />} />
             <Route path="/users/add-user" element={<AddUser />} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/navbar" element={<Navbar />} />
+
+            <Route path="/voucher" element={<ListVoucher />} /> {/* route Voucher diganti ListVoucher */}
+            <Route path="/voucher/list" element={<ListVoucher />} />
+            <Route path="/voucher/add-voucher" element={<AddVoucher />} />
             
+            <Route path="/payment" element={<ListPayment />} /> {/* route Payment diganti ListPayment */}
+            <Route path="/payment/list" element={<ListPayment />} />
+
           </Routes>
         </BrowserRouter>
       </StrictMode>

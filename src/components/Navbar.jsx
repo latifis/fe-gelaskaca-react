@@ -2,7 +2,7 @@ import "./../index.css";
 import { Link } from "react-router-dom";
 // import NavRegist from "./NavRegist";
 import NavDashboard from "./NavDashboard";
-import logo from "./../asset/logo.png";
+import logo from "./../asset/logo-M.png";
 
 function Navbar() {
   return (
@@ -12,15 +12,21 @@ function Navbar() {
           <Link to="/">
             <img src={logo} className="h-10" alt="logo-alt" />
           </Link>
-          <ul className="flex m-3 ml-12 text-xs font-semibold gap-8">
+          <ul className="flex m-5 ml-12 text-xs font-semibold gap-8">
             <li>
-              <Link to="/users">USERS</Link>
+              <Link to="/users">USER</Link>
             </li>
             <li>
               <Link to="/product">PRODUCT</Link>
             </li>
             <li>
-              <Link to="/order">ORDERS</Link>
+              <Link to="/order">ORDER</Link>
+            </li>
+            <li>
+              <Link to="/voucher">VOUCHER</Link>
+            </li>
+            <li>
+              <Link to="/payment">PAYMENT</Link>
             </li>
           </ul>
         </section>
