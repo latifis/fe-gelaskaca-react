@@ -81,7 +81,7 @@ function Rental() {
                                             {item.product.map((prod, index) => (
                                                 <ol type="1" key={index}>
                                                     <li>
-                                                        {index + 1}. {prod.prodName} ({prod.prodQty}) 
+                                                        {index + 1}. {prod.prodName} ({prod.prodQty} @Rp{prod.prodPrice}) = Rp{prod.prodQty * prod.prodPrice}
                                                     </li>
                                                 </ol>
                                             ))}    
@@ -95,9 +95,9 @@ function Rental() {
                                                 {item.payment.map((pay, index) => (
                                                     <div key={index}>
                                                         <p>Bank : {pay.bank}</p>
-                                                        <p>Total Pembayaran : {pay.total} </p>
-                                                        <p>Sudah Dibayarkan : {pay.total * 0.5}</p>
-                                                        <p>Sisa Pembayaran : {pay.total * 0.5}</p>
+                                                        <p>Total Pembayaran : Rp{pay.total} </p>
+                                                        <p>Sudah Dibayarkan : Rp{pay.total * 0.5}</p>
+                                                        <p>Sisa Pembayaran : Rp{pay.total * 0.5}</p>
                                                     </div>
                                                 ))}
                                             </p>
@@ -131,6 +131,27 @@ const items = [
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         state: "UPCOMING",
+        personCharge: "Agung Prayogi",
+        product: [
+            {
+                prodName: "Mic 18 Watt",
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
+            },
+            {
+                prodName: "Speaker",
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
+            }
+        ],
+        payment: [
+            {
+                bank: "BRI",
+                total: "600000"
+            }
+        ]
     },
     {
         rent_start: "23/03/2022",
@@ -138,6 +159,27 @@ const items = [
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         state: "UPCOMING",
+        personCharge: "Agung Prayogi",
+        product: [
+            {
+                prodName: "Mic 18 Watt",
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
+            },
+            {
+                prodName: "Speaker",
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
+            }
+        ],
+        payment: [
+            {
+                bank: "BRI",
+                total: "600000"
+            }
+        ]
     },
     {
         rent_start: "23/03/2022",
@@ -145,6 +187,27 @@ const items = [
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         state: "UPCOMING",
+        personCharge: "Agung Prayogi",
+        product: [
+            {
+                prodName: "Mic 18 Watt",
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
+            },
+            {
+                prodName: "Speaker",
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
+            }
+        ],
+        payment: [
+            {
+                bank: "BRI",
+                total: "600000"
+            }
+        ]
     },
     {
         rent_start: "23/03/2022",
@@ -152,6 +215,27 @@ const items = [
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         state: "UPCOMING",
+        personCharge: "Agung Prayogi",
+        product: [
+            {
+                prodName: "Mic 18 Watt",
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
+            },
+            {
+                prodName: "Speaker",
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
+            }
+        ],
+        payment: [
+            {
+                bank: "BRI",
+                total: "600000"
+            }
+        ]
     },
 ]
 
