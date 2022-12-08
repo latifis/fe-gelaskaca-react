@@ -5,6 +5,7 @@ import axios from 'axios';
 function Rental() {
     const [rent, setRent] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
 
     const fetchId = async () => {
         try {
@@ -26,27 +27,33 @@ function Rental() {
         <div>
             {items.map((item, index) => (
                 <div key={index}>
-                    <ul onClick={() => setShowModal(true)} className="flex flex-row py-5 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
-                        <li id="rent_start" className="felx-none w-40">
+                    <ul className="flex flex-row py-5 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
+                        <li id="rent_start" className="felx-none w-36">
                             {item.rent_start}
                         </li>
-                        <li id="name" className="flex-none w-32">
+                        <li id="name" className="flex-none w-28">
                             {item.name}
                         </li>
-                        <li id="address" className="flex-none w-72">
+                        <li id="address" className="flex-none w-52">
                             {item.address}
                         </li>
-                        <li id="rent_end" className="flex-none w-40">
+                        <li id="rent_end" className="flex-none w-36">
                             {item.rent_end}
                         </li>
-                        <li id="state" className="flex-none w-36">
-                            {item.state}
+                        <li id="status" className="flex-none w-36">
+                            {item.status}
+                        </li>
+                        <li id="action" className="flex-none w-24">
+                            <Link onClick={() => setShowModal(true)} type="button"
+                                class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out">
+                                DETAIL
+                            </Link>
                         </li>
                     </ul>
 
                     {showModal ? (
                         <>
-                            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                            <div className="justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                                 <div className="relative w-1/2 my-6 mx-auto">
                                     {/*content*/}
                                     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -67,6 +74,23 @@ function Rental() {
                                         {/*body*/}
                                         <div className="relative pt-6 px-6 flex-auto">
                                             <p className="mt-4 mb-2 text-lg font-semibold leading-relaxed">
+                                                Detail Penyewaan
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Nama Penyewa : {item.name}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Tanggal Penyewaan : {item.rent_start}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Tanggal Pengembalian : {item.rent_end}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Lokasi Acara : {item.address}
+                                            </p>
+                                        </div>
+                                        <div className="relative pt-6 px-6 flex-auto">
+                                            <p className="mb-2 text-lg font-semibold leading-relaxed">
                                                 Penanggung Jawab (PIC)
                                             </p>
                                             <p className="text-slate-500 leading-relaxed">
@@ -87,7 +111,7 @@ function Rental() {
                                             ))}    
                                             </p>
                                         </div>
-                                        <div className="relative p-6 flex-auto">
+                                        <div className="relative pt-6 px-6 flex-auto">
                                             <p className="mb-2 text-lg font-semibold leading-relaxed">
                                                 Pembayaran
                                             </p>
@@ -102,8 +126,23 @@ function Rental() {
                                                 ))}
                                             </p>
                                         </div>
+                                        <div className="relative p-6 flex-auto">
+                                            <p className="mb-2 text-lg font-semibold leading-relaxed">
+                                                SKPA
+                                            </p>
+                                            <p className="mb-2 text-blue-600 leading-relaxed">
+                                                <a href={item.Link}>{item.Link}</a>
+                                            </p>
+                                        </div>
                                         {/*footer*/}
                                         <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                                            <button
+                                                className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-4 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md"
+                                                type="button"
+                                                onClick={() => setShowModal(false)}
+                                            >
+                                                Complete
+                                            </button>
                                             <button
                                                 className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                 type="button"
@@ -130,7 +169,7 @@ const items = [
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "UPCOMING",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
@@ -151,14 +190,15 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
     {
         rent_start: "23/03/2022",
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "UPCOMING",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
@@ -179,14 +219,15 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
     {
         rent_start: "23/03/2022",
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "UPCOMING",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
@@ -207,14 +248,15 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
     {
         rent_start: "23/03/2022",
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "UPCOMING",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
@@ -235,7 +277,8 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
 ]
 

@@ -49,7 +49,7 @@ function Returned() {
 
                     {showModal ? (
                         <>
-                            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                            <div className="justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                                 <div className="relative w-1/2 my-6 mx-auto">
                                     {/*content*/}
                                     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -70,6 +70,23 @@ function Returned() {
                                         {/*body*/}
                                         <div className="relative pt-6 px-6 flex-auto">
                                             <p className="mt-4 mb-2 text-lg font-semibold leading-relaxed">
+                                                Detail Penyewaan
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Nama Penyewa : {item.name}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Tanggal Penyewaan : {item.rent_start}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Tanggal Pengembalian : {item.rent_end}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
+                                                Lokasi Acara : {item.address}
+                                            </p>
+                                        </div>
+                                        <div className="relative pt-6 px-6 flex-auto">
+                                            <p className="mb-2 text-lg font-semibold leading-relaxed">
                                                 Penanggung Jawab (PIC)
                                             </p>
                                             <p className="text-slate-500 leading-relaxed">
@@ -84,13 +101,13 @@ function Returned() {
                                             {item.product.map((prod, index) => (
                                                 <ol type="1" key={index}>
                                                     <li>
-                                                        {index + 1}. {prod.prodName} ({prod.prodQty}) 
+                                                        {index + 1}. {prod.prodName} ({prod.prodQty} @Rp{prod.prodPrice}) = Rp{prod.prodQty * prod.prodPrice}
                                                     </li>
                                                 </ol>
                                             ))}    
                                             </p>
                                         </div>
-                                        <div className="relative p-6 flex-auto">
+                                        <div className="relative pt-6 px-6 flex-auto">
                                             <p className="mb-2 text-lg font-semibold leading-relaxed">
                                                 Pembayaran
                                             </p>
@@ -98,11 +115,18 @@ function Returned() {
                                                 {item.payment.map((pay, index) => (
                                                     <div key={index}>
                                                         <p>Bank : {pay.bank}</p>
-                                                        <p>Total Pembayaran : {pay.total} </p>
-                                                        <p>Sudah Dibayarkan : {pay.total * 0.5}</p>
-                                                        <p>Sisa Pembayaran : {pay.total * 0.5}</p>
+                                                        <p>Total Pembayaran : Rp{pay.total} </p>
+                                                        <p>Sudah Dibayarkan : Rp{pay.total}</p>
                                                     </div>
                                                 ))}
+                                            </p>
+                                        </div>
+                                        <div className="relative p-6 flex-auto">
+                                            <p className="mb-2 text-lg font-semibold leading-relaxed">
+                                                SKPA
+                                            </p>
+                                            <p className="mb-2 text-blue-600 leading-relaxed">
+                                                <a href={item.Link}>{item.Link}</a>
                                             </p>
                                         </div>
                                         {/*footer*/}
@@ -134,16 +158,20 @@ const items = [
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "On Going",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
                 prodName: "Mic 18 Watt",
-                prodQty: 4
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
             },
             {
                 prodName: "Speaker",
-                prodQty: 2
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
             }
         ],
         payment: [
@@ -151,23 +179,28 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
     {
         rent_start: "23/03/2022",
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "On Going",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
                 prodName: "Mic 18 Watt",
-                prodQty: 4
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
             },
             {
                 prodName: "Speaker",
-                prodQty: 2
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
             }
         ],
         payment: [
@@ -175,23 +208,28 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
     {
         rent_start: "23/03/2022",
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "On Going",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
                 prodName: "Mic 18 Watt",
-                prodQty: 4
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
             },
             {
                 prodName: "Speaker",
-                prodQty: 2
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
             }
         ],
         payment: [
@@ -199,23 +237,28 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
     {
         rent_start: "23/03/2022",
         name: "latif",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
-        state: "On Going",
+        status: "UPCOMING",
         personCharge: "Agung Prayogi",
         product: [
             {
                 prodName: "Mic 18 Watt",
-                prodQty: 4
+                prodQty: 4,
+                prodPrice: 20000,
+                // prodTotal: 80000
             },
             {
                 prodName: "Speaker",
-                prodQty: 2
+                prodQty: 2,
+                prodPrice: 50000,
+                // prodTotal: 100000
             }
         ],
         payment: [
@@ -223,7 +266,8 @@ const items = [
                 bank: "BRI",
                 total: "600000"
             }
-        ]
+        ],
+        Link: "https"
     },
 ]
 

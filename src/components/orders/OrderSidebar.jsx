@@ -11,8 +11,8 @@ function OrderSidebar(){
                         </Link>
                     </li>
                     <li>
-                        <Link to="/order/returned" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <span class="ml-1 font-semibold text-lg">Return Rentals</span>
+                        <Link to="/order/returned" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-700">
+                            <span class="ml-1 font-semibold text-lg">Returned Rentals</span>
                         </Link>
                     </li>
                 </ul>

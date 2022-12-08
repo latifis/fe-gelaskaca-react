@@ -11,7 +11,7 @@ function ReturnedNavbar() {
                     Name
                 </li>
                 <li id="address" className="flex-none w-72">
-                    Address
+                    Venue Address
                 </li>
                 <li id="rent_end" className="flex-none w-40">
                     Rental End
