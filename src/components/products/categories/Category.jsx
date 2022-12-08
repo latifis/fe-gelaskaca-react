@@ -4,20 +4,30 @@ import { Link } from "react-router-dom";
 import Categories from "../../Categories";
 import Modal from "./Modal";
 
+const items = [
+	{
+		name: "Sound System",
+	},
+	{
+		name: "Bridging",
+	},
+];
+
 function Category() {
 	const [showModal, setShowModal] = useState(false);
 	const [cat, setCat] = useState([]);
+	const [data, setData] = useState([]);
 
-	const fetchData = async () => {
-		try {
-			await axios.get("htpp://localhost:8080/api/categorys")
-            .then((response) => {
-				setCat(() => response.data);
-			});
-		} catch(err) {
-			console.log(err)
-		}
-	};
+	// const fetchData = async () => {
+	// 	try {
+	// 		await axios.get("htpp://localhost:8080/api/categorys")
+    //         .then((response) => {
+	// 			setCat(() => response.data);
+	// 		});
+	// 	} catch(err) {
+	// 		console.log(err)
+	// 	}
+	// };
 
     const saveCat = async () => {
         try{
@@ -31,17 +41,18 @@ function Category() {
 
     const getCat = () => {
         setCat(items);
+		setData(items);
     }
 	useEffect(() => {
-		fetchData();
+		// fetchData();
         getCat();
 	}, []);
 
     
-    console.log(cat);
+    
 	return (
 		<div>
-			{cat.map((item, index) => (
+			{data.map((item, index) => (
 				<div key={index}>
 					<ul className="flex flex-row py-2 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
 						<li id="name" className="felx-none w-56">
@@ -96,7 +107,7 @@ function Category() {
 											<input
 												type="text"
 												className="text-slate-500 leading-relaxed p-1 border w-full"
-												value={item.name} onChange={
+												value={cat[0].name} onChange={
                                                    (e) => {
                                                     setCat(e.target.value)
                                                    }
@@ -137,16 +148,5 @@ function Category() {
 		</div>
 	);
 }
-
-const items = [
-	{
-        id : 1,
-		name: "Sound System",
-	},
-	{
-        id : 2,
-		name: "Bridging",
-	},
-];
 
 export default Category;

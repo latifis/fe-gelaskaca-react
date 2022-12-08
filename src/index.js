@@ -21,6 +21,7 @@ import Product from "./components/products/Product";
 import Category from "./components/products/categories/IndexCategory";
 import Stock from "./components/products/stocks/IndexStock";
 import AddProduct from "./components/products/add/IndexAdd";
+import AddImage from "./components/products/add/IndexAddImage";
 
 import Navbar from "./components/Navbar";
 
@@ -60,6 +61,7 @@ function App() {
             <Route path="/product/categories" element={<Category />} />
             <Route path="/product/stocks" element={<Stock />} />
             <Route path="/product/add-product" element={<AddProduct />} />
+            <Route path="/product/add-product-image" element={<AddImage />} />
 
             <Route path="/users" element={<ListUser />} /> {/* route User diganti List */}
             <Route path="/users/list" element={<ListUser />} />

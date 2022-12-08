@@ -20,6 +20,11 @@ function ProductSidebar(){
                             <span class="ml-1 font-semibold text-lg">Add Product</span>
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/product/add-product-image" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-700">
+                            <span class="ml-1 font-semibold text-lg">Add Product Image</span>
+                        </Link>
+                    </li>
                 </ul>
             </div>  
         </aside>
