@@ -19,6 +19,7 @@ import Returned from "./components/orders/returneds/IndexReturned";
 
 import Product from "./components/products/Product";
 import Category from "./components/products/categories/IndexCategory";
+import CategoryEdit from "./components/products/categories/CategoryEdit";
 import Stock from "./components/products/stocks/IndexStock";
 import AddProduct from "./components/products/add/IndexAdd";
 import AddImage from "./components/products/add/IndexAddImage";
@@ -59,6 +60,7 @@ function App() {
             
             <Route path="/product" element={<Category />} /> {/* route Product diganti Category */}
             <Route path="/product/categories" element={<Category />} />
+            <Route path="/product/categories/:id" element={<CategoryEdit />} />
             <Route path="/product/stocks" element={<Stock />} />
             <Route path="/product/add-product" element={<AddProduct />} />
             <Route path="/product/add-product-image" element={<AddImage />} />
