@@ -17,7 +17,7 @@ function RentalNavbar() {
                     Rental End
                 </li>
                 <li id="state" className="flex-none w-36">
-                    State
+                    Status
                 </li>
             </ul>
         </nav>

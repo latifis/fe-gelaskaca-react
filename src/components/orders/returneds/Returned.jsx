@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Returned() {
     const [returns, setReturns] = useState([]);
@@ -23,8 +24,8 @@ function Returned() {
 
     return (
         <div>
-            {items.map((item) => (
-                <div>
+            {items.map((item, index) => (
+                <div key={index}>
                     <ul className="flex flex-row py-3 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
                         <li id="rent_start" className="felx-none w-40">
                             {item.rent_start}
