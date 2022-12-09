@@ -37,6 +37,7 @@ import AddVoucher from "./components/vouchers/add/IndexAddVoucher"
 
 import Payment from "./components/payments/Payment";
 import ListPayment from "./components/payments/lists/IndexListPayment"
+import ListApproved from "./components/payments/Approved/IndexApproved"
 
 function App() {
   return (
@@ -80,6 +81,7 @@ function App() {
             
             <Route path="/payment" element={<ListPayment />} /> {/* route Payment diganti ListPayment */}
             <Route path="/payment/list" element={<ListPayment />} />
+            <Route path="/payment/approved" element={<ListApproved />} />
 
           </Routes>
         </BrowserRouter>
