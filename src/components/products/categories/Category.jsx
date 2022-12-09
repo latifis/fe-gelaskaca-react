@@ -61,7 +61,7 @@ function Category() {
 						<li id="name" className="felx-none w-64">
 							{item.name}
 						</li>
-						<li id="action" className="flex-none px-5 w-100">
+						<li id="action" className="flex-none px-5 ml-2 w-64">
 							<div className="flex gap-3">
 								<Link
 									onClick={`/product/categories/${index}`}

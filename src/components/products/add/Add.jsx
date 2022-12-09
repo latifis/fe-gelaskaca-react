@@ -3,6 +3,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Add() {
+    const rentInitial = {
+        address: "",
+        rent_start: "",
+        rent_end: "",
+        state: 0,
+      };
+      
     const [catData, setCatData] = useState([])
 
     const fetchData = async () => {

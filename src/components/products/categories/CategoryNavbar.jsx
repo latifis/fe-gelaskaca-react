@@ -13,7 +13,7 @@ function CategoryNavbar(){
                 <li id="name" className="flex-none w-64">
                     Name
                 </li>
-                <li id="action" className="flex-none px-5 w-56">
+                <li id="action" className="flex-none px-5 w-64">
                     Action
                 </li>
             </ul>
