@@ -25,7 +25,7 @@ function AddCategory() {
 			<form action="">
 				<div className="flex flex-col gap-4 px-8">
 					<div className="flex flex-row items-center gap-4">
-						<label id="merk" className="w-40 font-semibold">
+						<label id="picture" className="w-40 font-semibold">
 							Gambar Kategori{" "}
 						</label>
 						<label className="w-4">:</label>
@@ -62,7 +62,7 @@ function AddCategory() {
 						</label>
 					</section>
 					<div className="flex flex-row items-center gap-4">
-						<label id="name" className="w-52 font-semibold">
+						<label id="name" className="w-72 font-semibold">
 							Nama Kategori{" "}
 						</label>
 						<label className="w-4">:</label>
