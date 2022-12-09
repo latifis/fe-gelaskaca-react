@@ -1,45 +1,108 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 function AddImage() {
-    return(
-        <div>
-            <div className="px-8">
-                <p className="font-bold text-xl mb-4">Detail Product</p>
-                <form action="">
-                    <div className="flex flex-col gap-4 px-8">
-                        <div className="flex flex-row items-center gap-4">
-                            <label id="name" className="w-52 font-semibold">Pilih Nama Produk </label>
-                            <label className="w-4">:</label>
-                            <select className="w-full border-2 p-1 text-sm">
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
-                            </select>
-                            {/* <input type="text" className="w-full border-2 p-1 text-sm" placeholder="masukkan nama produk" required/> */}
-                        </div>
-                        <div className="flex flex-row items-center gap-4">
-                            <label id="merk" className="w-52 font-semibold">Merk Produk </label>
-                            <label className="w-4">:</label>
-                            <input type="text" className="w-full border-2 p-1 text-sm" placeholder="masukkan merk produk" required/>
-                        </div>
-                        <div className="flex flex-row items-center gap-4">
-                            <label id="price" className="w-52 font-semibold">Harga </label>
-                            <label className="w-4">:</label>
-                            <input type="text" className="w-full border-2 p-1 text-sm" placeholder="masukkan harga produk per item" required/>
-                        </div>
-                        <div className="flex flex-row items-center gap-4">
-                            <label id="desc" className="w-52 font-semibold">Deskripsi </label>
-                            <label className="w-4">:</label>
-                            <textarea cols="30" rows="6" className="w-full border-2 p-1 text-sm" placeholder="masukkan deskripsi produk"></textarea> 
-                        </div>
-                        <div className="flex flex-row items-center justify-end gap-4">
-                            <button className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md">
-                                Add
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    )
+	const [userData, setUserData] = useState([]);
+
+	const fetchData = async () => {
+		try {
+			await axios.get("http://localhost:8080/api/categorys").then((res) => {
+				setUserData(() => res.data);
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	return (
+		<div>
+			<div className="px-8">
+				<p className="font-bold text-xl mb-4">Add Product Image</p>
+				<form action="">
+					<div className="flex flex-col gap-4 px-8">
+						<div className="flex flex-row items-center gap-4">
+							<label id="name" className="w-64 font-semibold">
+								Pilih Nama Produk{" "}
+							</label>
+							<label className="w-4">:</label>
+							<select className="w-full border-2 p-1 text-sm">
+								<option selected className="text-gray-500">
+									--pilih produk yang tersedia--
+								</option>
+								{items.map((item, index) => (
+									<option value="" key={index}>
+										{item.userName}
+									</option>
+								))}
+							</select>
+							{/* <input type="text" className="w-full border-2 p-1 text-sm" placeholder="masukkan nama produk" required/> */}
+						</div>
+						<div className="flex flex-row items-center gap-4">
+							<label id="merk" className="w-40 font-semibold">
+								Gambar Produk{" "}
+							</label>
+							<label className="w-4">:</label>
+						</div>
+						<section class="flex items-center justify-center w-full my-1">
+							<label
+								for="dropzone-file"
+								class="flex flex-col items-center justify-center w-full h-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+							>
+								<div class="flex flex-col items-center justify-center pt-4 pb-6">
+									<svg
+										aria-hidden="true"
+										class="w-10 h-10 mb-3 text-gray-400"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+										></path>
+									</svg>
+									<p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+										<span class="font-semibold">Klik</span> atau drag and drop
+									</p>
+									<p class="text-xs text-gray-500 dark:text-gray-400">
+										JPG atau PNG
+									</p>
+								</div>
+								<input id="dropzone-file" type="file" class="hidden" multiple />
+							</label>
+						</section>
+						<div className="flex flex-row items-center justify-end gap-4">
+							<button
+								onClick={"/"}
+								className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md"
+							>
+								Submit
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	);
 }
+
+const items = [
+	{
+		userName: "aaaa",
+	},
+	{
+		userName: "bbbb",
+	},
+	{
+		userName: "cccc",
+	},
+];
 
 export default AddImage;

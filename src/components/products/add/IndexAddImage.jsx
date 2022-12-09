@@ -17,7 +17,15 @@ function IndexAdd() {
                                     <Link to="/product">Product</Link>
                                 </li>
                                 <li>
-                                    <Link to="/product/categories" aria-label="current-page">
+                                    <Link to="/product/stocks">Stock</Link>
+                                </li>
+                                <li>
+                                    <Link to="/product/add-product" aria-label="current-page">
+                                        Add product
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/product/add-product-image" aria-label="current-page">
                                         Add product image
                                     </Link>
                                 </li>

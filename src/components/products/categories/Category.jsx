@@ -55,11 +55,11 @@ function Category() {
 			{data.map((item, index) => (
 				<div key={index}>
 					<ul className="flex flex-row py-2 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
-						<li id="name" className="felx-none w-56">
-							{item.name}
-						</li>
-						<li id="image" className="flex-none w-96">
+					<li id="image" className="flex-none w-96">
 							{/* {item.name} */}
+						</li>
+						<li id="name" className="felx-none w-64">
+							{item.name}
 						</li>
 						<li id="action" className="flex-none px-5 w-100">
 							<div className="flex gap-3">

@@ -23,6 +23,7 @@ import CategoryEdit from "./components/products/categories/CategoryEdit";
 import Stock from "./components/products/stocks/IndexStock";
 import AddProduct from "./components/products/add/IndexAdd";
 import AddImage from "./components/products/add/IndexAddImage";
+import AddCategory from "./components/products/add/IndexAddCategory";
 
 import Navbar from "./components/Navbar";
 
@@ -64,6 +65,7 @@ function App() {
             <Route path="/product/stocks" element={<Stock />} />
             <Route path="/product/add-product" element={<AddProduct />} />
             <Route path="/product/add-product-image" element={<AddImage />} />
+            <Route path="/product/add-category" element={<AddCategory />} />
 
             <Route path="/users" element={<ListUser />} /> {/* route User diganti List */}
             <Route path="/users/list" element={<ListUser />} />

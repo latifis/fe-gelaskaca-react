@@ -1,10 +1,10 @@
 import Navbar from "../../Navbar";
 import Footer from "../../Footer";
 import ProductSidebar from "../ProductSidebar";
-import Add from "./Add";
+import AddCategory from "./AddCategory";
 import { Link } from "react-router-dom";
 
-function IndexAdd() {
+function IndexAddCategory() {
     return (
         <div>
             <div className='my-8 mx-12'>
@@ -17,11 +17,11 @@ function IndexAdd() {
                                     <Link to="/product">Product</Link>
                                 </li>
                                 <li>
-                                    <Link to="/product/stocks">Stock</Link>
+                                    <Link to="/product/categories">Category</Link>
                                 </li>
                                 <li>
-                                    <Link to="/product/add-product" aria-label="current-page">
-                                        Add product
+                                    <Link to="/product/add-category" aria-label="current-page">
+                                        Add Category
                                     </Link>
                                 </li>
                             </ul>
@@ -31,7 +31,7 @@ function IndexAdd() {
                 <section className="flex py-4 my-8">
                     <ProductSidebar />
                     <section>
-                        <Add />
+                        <AddCategory />
                     </section>
                 </section>
             </div>
@@ -42,4 +42,4 @@ function IndexAdd() {
     )
 }
 
-export default IndexAdd;
+export default IndexAddCategory;
