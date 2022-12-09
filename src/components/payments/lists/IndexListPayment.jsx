@@ -34,25 +34,22 @@ function IndexAdd() {
                                 return (
                                     <div>
                                         <ul className="flex flex-row py-2 gap-2 items-center text-center text-sm transition duration-300 ease-in-out hover:bg-gray-100">
-                                            <li id="name" className="flex-none w-28">
+                                            <li id="name" className="flex-none w-32">
                                                 {item.name}
                                             </li>
-                                            <li id="email" className="flex-none w-56">
-                                                {item.email}
-                                            </li>
-                                            <li id="age" className="flex-none w-20">
-                                                {item.age}
-                                            </li>
-                                            <li id="role" className="flex-none w-36">
-                                                {item.role}
-                                            </li>
-                                            <li id="phone" className="flex-none w-36">
+                                            <li id="phone" className="flex-none w-56">
                                                 {item.phone}
                                             </li>
-                                            <li id="action" className="flex-none px-10 w-100">
+                                            <li id="total" className="flex-none w-36">
+                                                {item.total}
+                                            </li>
+                                            <li id="dp" className="flex-none w-56">
+                                                {item.dp}
+                                            </li>
+                                            <li id="action" className="flex-none px-2 w-100">
                                                 <div className="flex gap-3">
-                                                    <button type="button" class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out">Edit</button>
-                                                    <button type="button" class="inline-block px-4 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
+                                                    <button type="button" class="inline-block px-5 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out">Assign</button>
+                                                    <button type="button" class="inline-block px-5 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out">Proof</button>
                                                 </div>
                                             </li>
                                         </ul>
@@ -73,39 +70,34 @@ function IndexAdd() {
 const items = [
     {
         name: "Latif",
-        email: "latifadmin@gmail.com",
-        age: 22,
-        role: "ADMIN",
-        phone: "0822223432234",
+        phone: "0822233383883",
+        total: 200000,
+        dp: 5500000,
     },
     {
-        name: "Latifpic",
-        email: "latifpicn@gmail.com",
-        age: 21,
-        role: "PIC",
-        phone: "08222222368",
+        name: "Latif",
+        phone: "0822233383883",
+        total: 200000,
+        dp: 5500000,
     },
     {
-        name: "Latifpic",
-        email: "latifpicn@gmail.com",
-        age: 21,
-        role: "PIC",
-        phone: "08222222368",
+        name: "Latif",
+        phone: "0822233383883",
+        total: 200000,
+        dp: 5500000,
     },
     {
-        name: "Latifpic",
-        email: "latifpicn@gmail.com",
-        age: 21,
-        role: "PIC",
-        phone: "08222222368",
+        name: "Latif",
+        phone: "0822233383883",
+        total: 200000,
+        dp: 5500000,
     },
     {
-        name: "Latifpic",
-        email: "latifpicn@gmail.com",
-        age: 21,
-        role: "PIC",
-        phone: "08222222368",
-    }
+        name: "Latif",
+        phone: "0822233383883",
+        total: 200000,
+        dp: 5500000,
+    },
 ]
 
 export default IndexAdd;
