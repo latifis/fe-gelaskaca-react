@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 function UserNavbar(){
     return(
         <nav className="mb-8">
+            <div className="flex justify-end">
+                <Link to="/users/add-user" className="bg-blue-600 rounded-xl p-2 px-4 font-semibold text-white mb-4 hover:shadow-md">Add</Link>
+            </div>
             <ul className="flex flex-row gap-2 text-center font-bold text-sm">
                 <li id="name" className="flex-none w-28">
                     Name

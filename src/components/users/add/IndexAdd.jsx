@@ -2,6 +2,7 @@ import Navbar from "../../Navbar";
 import Footer from "../../Footer";
 import UserSidebar from "../UserSidebar";
 import UserNavbar from "../UserNavbar";
+import User from "../User";
 import { Link } from "react-router-dom";
 
 function IndexLAdd() {
@@ -27,6 +28,7 @@ function IndexLAdd() {
                 </div>
                 <section className="flex py-4 my-8">
                     <UserSidebar />
+                    
                 </section>
             </div>
             <footer>

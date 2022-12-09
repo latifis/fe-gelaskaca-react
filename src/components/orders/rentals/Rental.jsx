@@ -80,6 +80,9 @@ function Rental() {
                                                 Nama Penyewa : {item.name}
                                             </p>
                                             <p className="text-slate-500 leading-relaxed">
+                                                Nomor Telepon : {item.phone}
+                                            </p>
+                                            <p className="text-slate-500 leading-relaxed">
                                                 Tanggal Penyewaan : {item.rent_start}
                                             </p>
                                             <p className="text-slate-500 leading-relaxed">
@@ -167,6 +170,7 @@ const items = [
     {
         rent_start: "23/03/2022",
         name: "latif",
+        phone: "081234567890",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         status: "UPCOMING",
@@ -196,6 +200,7 @@ const items = [
     {
         rent_start: "23/03/2022",
         name: "latif",
+        phone: "081234567890",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         status: "UPCOMING",
@@ -225,6 +230,7 @@ const items = [
     {
         rent_start: "23/03/2022",
         name: "latif",
+        phone: "081234567890",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         status: "UPCOMING",
@@ -254,6 +260,7 @@ const items = [
     {
         rent_start: "23/03/2022",
         name: "latif",
+        phone: "081234567890",
         address: "Tawakal Street No. 27, Jakarta",
         rent_end: "30/03/2022",
         status: "UPCOMING",
