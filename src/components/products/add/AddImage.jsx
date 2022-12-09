@@ -1,28 +1,59 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function AddImage() {
-	const [userData, setUserData] = useState([]);
+	const rentInitial = {
+        name: "",
+        price: 0,
+        brand: "",
+        qty: 0,
+      };
+      
+    const [catData, setCatData] = useState([])
+    const [productImage, setProductImage] = useState(rentInitial)
+    const navigate = useNavigate();
 
-	const fetchData = async () => {
-		try {
-			await axios.get("http://localhost:8080/api/categorys").then((res) => {
-				setUserData(() => res.data);
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	};
+    function inputHandler(evt) {
+        const value = evt.target.value;
+        setProductImage({
+          ...productImage,
+          [evt.target.name]: value,
+        });
+      }
 
-	useEffect(() => {
-		fetchData();
-	}, []);
+    const fetchData = async () => {
+        try{
+            await axios
+            .get("http://localhost:8080/api/categorys")
+            .then((res) => {
+                setCatData(() => res.data)
+            })
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, []);
+
+    const submitProduct = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.post(`http://localhost:8080/api/products`).then((res) => {
+            navigate("/product/stocks");
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      };
 
 	return (
 		<div>
 			<div className="px-8">
 				<p className="font-bold text-xl mb-4">Add Product Image</p>
-				<form action="">
+				<form onSubmit={submitProduct}>
 					<div className="flex flex-col gap-4 px-8">
 						<div className="flex flex-row items-center gap-4">
 							<label id="name" className="w-64 font-semibold">
@@ -79,13 +110,10 @@ function AddImage() {
 							</label>
 						</section>
 						<div className="flex flex-row items-center justify-end gap-4">
-							<button
-								onClick={"/"}
-								className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md"
-							>
-								Submit
-							</button>
-						</div>
+                        <Link to="/product/stocks" className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-4 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md">
+                            <input type="submit" value="Submit"/>
+                        </Link>
+                    </div>
 					</div>
 				</form>
 			</div>

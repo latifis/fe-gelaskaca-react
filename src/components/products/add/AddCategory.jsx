@@ -98,13 +98,13 @@ function AddCategory() {
                             value={category.name}
                             onChange={inputHandler}
 							className="w-full border-2 p-1 text-sm"
-							placeholder="masukkan nama produk"
+							placeholder="masukkan nama kategori"
 							required
 						/>
 					</div>
 					<div className="flex flex-row items-center justify-end gap-4">
-						<Link
-							className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md"
+						<Link to="/product/categories"
+							className="text-white bg-blue-600 rounded-lg font-semibold uppercase px-4 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 hover:shadow-md"
 						>
 							Submit
 						</Link>
