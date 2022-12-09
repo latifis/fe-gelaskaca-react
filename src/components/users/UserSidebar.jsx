@@ -9,9 +9,6 @@ function UserSidebar(){
                         <Link to="/users/list" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-700">
                             <span class="ml-1 font-semibold text-lg">All Users</span>
                         </Link>
-                        <Link to="/users/add-user" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-700">
-                            <span class="ml-1 font-semibold text-lg">Add User</span>
-                        </Link>
                     </li>
                 </ul>
             </div>  
