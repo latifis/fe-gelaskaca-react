@@ -97,7 +97,7 @@ function AddCategory() {
                             name = "name"
                             value={category.name}
                             onChange={inputHandler}
-							className="w-full border-2 p-1 text-sm"
+							className="css-13cymwt-control w-full border-2 p-2 ml-1 text-sm"
 							placeholder="masukkan nama kategori"
 							required
 						/>

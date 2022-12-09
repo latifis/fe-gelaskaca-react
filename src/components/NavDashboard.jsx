@@ -51,24 +51,6 @@ function NavDashboard() {
             tabIndex="-1"
           >
             <div className="py-1" role="none">
-              <Link
-                to="/profile"
-                className="text-gray-600 block px-4 py-2 text-sm hover:text-black"
-                role="menuitem"
-                tabIndex="-1"
-                id="menu-item-0"
-              >
-                Akun Saya
-              </Link>
-              <Link
-                to="/history"
-                className="text-gray-600 block px-4 py-2 text-sm hover:text-black"
-                role="menuitem"
-                tabIndex="-1"
-                id="menu-item-1"
-              >
-                Status Penyewaan
-              </Link>
               <form method="POST" action="/" role="none">
                 <button
                   type="submit"
