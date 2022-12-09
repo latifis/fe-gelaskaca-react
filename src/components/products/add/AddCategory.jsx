@@ -1,9 +1,23 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AddCategory() {
+    const rentInitial = {
+        name: "",
+      };
+      
 	const [catData, setCatData] = useState([]);
+    const [category, setCategory] = useState(rentInitial)
+    const navigate = useNavigate();
+
+    function inputHandler(evt) {
+        const value = evt.target.value;
+        setCategory({
+          ...category,
+          [evt.target.name]: value,
+        });
+      }
 
 	const fetchData = async () => {
 		try {
@@ -19,10 +33,21 @@ function AddCategory() {
 		fetchData();
 	}, []);
 
+    const submitCategory = async (e) => {
+        e.preventDefault();
+        try {
+          await axios.post(`http://localhost:8080/api/categorys`).then((res) => {
+            navigate("/product/categorys");
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
 	return (
 		<div className="px-8">
 			<p className="font-bold text-xl mb-4">Add Category</p>
-			<form action="">
+			<form action="" onSubmit={submitCategory}>
 				<div className="flex flex-col gap-4 px-8">
 					<div className="flex flex-row items-center gap-4">
 						<label id="picture" className="w-40 font-semibold">
@@ -62,12 +87,16 @@ function AddCategory() {
 						</label>
 					</section>
 					<div className="flex flex-row items-center gap-4">
-						<label id="name" className="w-72 font-semibold">
+						<label className="w-72 font-semibold">
 							Nama Kategori{" "}
 						</label>
 						<label className="w-4">:</label>
 						<input
 							type="text"
+                            id="name"
+                            name = "name"
+                            value={category.name}
+                            onChange={inputHandler}
 							className="w-full border-2 p-1 text-sm"
 							placeholder="masukkan nama produk"
 							required
