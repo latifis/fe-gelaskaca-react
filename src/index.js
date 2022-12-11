@@ -45,7 +45,7 @@ function App() {
       <StrictMode>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Rental />} />
             <Route path="/dashboard" element={<Dashboard />} />
             {/* <Route path="/product" element={<ProductDetail />} /> */}
             <Route path="/cart" element={<Cart />} />
